@@ -4,14 +4,14 @@ using System.Collections.Generic;
 
 namespace DynamicObjects {
 
-    [CustomEditor(typeof(Signal))]
+    [CustomEditor(typeof(DynamicSignal))]
     public class DynamicSignalEditor : Editor {
 
         private bool showListeners = false;
 
         public override void OnInspectorGUI() {
             serializedObject.Update();
-            var signal = target as Signal;
+            var signal = target as DynamicSignal;
             if (signal == null) return;
 
 

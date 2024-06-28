@@ -5,14 +5,11 @@ public class ExamplePlayer : MonoBehaviour {
 
     [SerializeField] private DynamicReference<float> playerHealth;
     [SerializeField] private DynamicReference<string> playerName;
+    [SerializeField] private DynamicReference<float> damage;
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            playerHealth.Value -= 5;
-        }
-    }
+    public void OnPlayerHurt() => playerHealth.Value -= damage.Value;
 
     public void OnPlayerHealthChanged() {
-        Debug.Log($"Signal received! {(string)playerName}'s current health:   {(float)playerHealth}");
+        Debug.Log($"PlayerHealthChanged Signal received! {playerName.Value}'s current health:  {playerHealth.Value}");
     }
 }

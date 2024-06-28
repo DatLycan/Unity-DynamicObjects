@@ -52,6 +52,8 @@ namespace DynamicObjects {
             GUILayout.Label(value.ToString());
             return value;
         }
+
+        public override bool RequiresConstantRepaint() => true;
     }
 
 }

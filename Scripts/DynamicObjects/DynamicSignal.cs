@@ -4,7 +4,7 @@ using UnityEngine;
 namespace DynamicObjects {
 
     [CreateAssetMenu(fileName = "Signal", menuName = "Dynamic Objects/Signal")]
-    public class Signal : ScriptableObject {
+    public class DynamicSignal : ScriptableObject {
 
 
         private List<DynamicSignalListener> listeners = new();

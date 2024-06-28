@@ -10,7 +10,7 @@ namespace DynamicObjects {
         [System.Serializable]
         private class DynamicResponse : UnityEvent<Component, object> { }
 
-        [SerializeField] private Signal signal;
+        [SerializeField] private DynamicSignal signal;
         [SerializeField] private DynamicResponse response;
 
 

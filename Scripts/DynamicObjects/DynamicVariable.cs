@@ -6,7 +6,7 @@ namespace DynamicObjects {
 
         public T initialValue;
         public bool emitSignal = false;
-        public Signal signal;
+        public DynamicSignal signal;
 
         private T _value;
 
