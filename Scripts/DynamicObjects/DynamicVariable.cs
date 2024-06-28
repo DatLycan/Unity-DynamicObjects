@@ -9,8 +9,7 @@ namespace DynamicObjects {
         [SerializeField] private T _initialValue;
         [SerializeField] private T _value;
 
-        [HideInInspector]
-        public T Value {
+        private T Value {
             get => _value;
             set {
                 _value = value;
@@ -20,7 +19,8 @@ namespace DynamicObjects {
 
         private void OnEnable() => Value = _initialValue;
 
-        public static implicit operator T(DynamicVariable<T> variable) => variable.Value;
+        public T Set(T value) => Value = value;
+        public T Get() => Value;
     }
 
 }

@@ -16,14 +16,14 @@ namespace DynamicObjects {
         public static implicit operator T(DynamicReference<T> reference) => reference.Value;
 
         public T Value {
-            get => _useLocalValue ? _localValue : _dynamicVariable == null ? throw new NullReferenceException() : _dynamicVariable.Value;
+            get => _useLocalValue ? _localValue : _dynamicVariable == null ? throw new NullReferenceException() : _dynamicVariable.Get();
             set {
                 if (_useLocalValue) {
                     _localValue = value;
                 }
                 else {
                     if (_dynamicVariable == null) throw new NullReferenceException();
-                    _dynamicVariable.Value = value;
+                    _dynamicVariable.Set(value);
                 }
             }
         }
