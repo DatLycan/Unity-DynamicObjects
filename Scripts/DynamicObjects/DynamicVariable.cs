@@ -4,11 +4,11 @@ namespace DynamicObjects {
 
     public class DynamicVariable<T> : ScriptableObject {
 
-        [SerializeField] public T initialValue;
-        [SerializeField] public bool emitSignal = false;
-        [SerializeField] public Signal signal;
+        public T initialValue;
+        public bool emitSignal = false;
+        public Signal signal;
 
-        [SerializeField] private T _value;
+        private T _value;
 
         private T Value {
             get => _value;

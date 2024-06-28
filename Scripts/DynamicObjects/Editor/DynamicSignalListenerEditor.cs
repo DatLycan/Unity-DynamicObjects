@@ -2,7 +2,7 @@ using UnityEditor;
 
 namespace DynamicObjects {
 
-    [CustomEditor(typeof(SignalListener))]
+    [CustomEditor(typeof(DynamicSignalListener))]
     public class SignalListenerEditor : Editor {
 
         private SerializedProperty signal;
@@ -15,7 +15,7 @@ namespace DynamicObjects {
 
         public override void OnInspectorGUI() {
             serializedObject.Update();
-            var signalListener = target as SignalListener;
+            var signalListener = target as DynamicSignalListener;
             if (signalListener == null) return;
 
             EditorGUILayout.PropertyField(signal);

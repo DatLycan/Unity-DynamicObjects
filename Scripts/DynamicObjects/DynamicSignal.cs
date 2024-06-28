@@ -7,18 +7,18 @@ namespace DynamicObjects {
     public class Signal : ScriptableObject {
 
 
-        private List<SignalListener> listeners = new();
+        private List<DynamicSignalListener> listeners = new();
 
 
-        public List<SignalListener> GetConnectedListeners() => listeners;
+        public List<DynamicSignalListener> GetConnectedListeners() => listeners;
 
 
-        public void Connect(SignalListener listener) {
+        public void Connect(DynamicSignalListener listener) {
             if (listeners.Contains(listener)) return;
             listeners.Add(listener);
         }
 
-        public void Disconnect(SignalListener listener) {
+        public void Disconnect(DynamicSignalListener listener) {
             if (!listeners.Contains(listener)) return;
             listeners.Remove(listener);
         }

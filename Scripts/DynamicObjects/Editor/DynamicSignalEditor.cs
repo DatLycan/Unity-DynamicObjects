@@ -32,7 +32,7 @@ namespace DynamicObjects {
 
         private List<Component> GetSignalListenerParents(Signal signal) {
             List<Component> parents = new();
-            foreach (SignalListener listener in signal.GetConnectedListeners()) {
+            foreach (DynamicSignalListener listener in signal.GetConnectedListeners()) {
                 Component parent = listener.gameObject.GetComponentInParent<Component>();
                 if (parent != null && !parents.Contains(parent)) {
                     parents.Add(parent);

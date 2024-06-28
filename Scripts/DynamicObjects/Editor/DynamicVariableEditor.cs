@@ -22,7 +22,7 @@ namespace DynamicObjects {
             var dynamicVariable = target as DynamicVariable<T>;
             if (dynamicVariable == null) return;
 
-            GUILayout.Label("Initial Value:");
+            GUILayout.Label("Initial Value");
             var value = ValueField(dynamicVariable.initialValue);
             if (!dynamicVariable.initialValue.Equals(value)) dynamicVariable.initialValue = value;
 
