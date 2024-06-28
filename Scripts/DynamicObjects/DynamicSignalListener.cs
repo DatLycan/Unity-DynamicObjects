@@ -4,7 +4,7 @@ using UnityEngine.Events;
 namespace DynamicObjects {
 
     [Icon("Gizmos/SignalListener Icon.png")]
-    [AddComponentMenu("DynamicObjects/Signal Listener")]
+    [AddComponentMenu("Dynamic Objects/Signal Listener")]
     public class DynamicSignalListener : MonoBehaviour {
 
         [System.Serializable]

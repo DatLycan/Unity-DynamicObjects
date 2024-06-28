@@ -4,7 +4,7 @@ using UnityEngine;
 namespace DynamicObjects {
 
     [Icon("Gizmos/DynamicRuntimeSetAdder Icon.png")]
-    [AddComponentMenu("DynamicObjects/Runtime Set Member")]
+    [AddComponentMenu("Dynamic Objects/Runtime Set Member")]
     public class DynamicRuntimeSetMember : MonoBehaviour {
 
         [SerializeField] private DynamicGameObjectRuntimeSet runtimeSet;
