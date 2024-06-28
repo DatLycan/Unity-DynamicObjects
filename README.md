@@ -43,6 +43,8 @@ Simply download the [latest release](https://github.com/DatLycan/DynamicObjects/
 
 *Everything can be managed in the inspector!*
 
+<br>
+
 ---
 
 ### DynamicSignal, DynamicVariable, DynamicRuntimeSet
@@ -79,6 +81,10 @@ Simply download the [latest release](https://github.com/DatLycan/DynamicObjects/
     // [. . .]
    ```
 2. In the Inspector **select a DynamicVariable**.
+
+---
+
+<br>
 
 ## 🎥 Demo <a name = "acknowledgement"></a>
 
