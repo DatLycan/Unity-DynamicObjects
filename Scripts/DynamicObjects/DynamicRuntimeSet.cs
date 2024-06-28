@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,10 +5,11 @@ public class DynamicRuntimeSet<T> : ScriptableObject {
 
     private List<T> members = new();
 
+    public void Add(T item) { if (!Contains(item)) members.Add(item); }
+    public void Remove(T item) { if (Contains(item)) members.Remove(item); }
+
     public List<T> Get() => members;
     public void Clear() => members.Clear();
-    public void Add(T item) => members.Add(item);
-    public void Remove(T item) => members.Remove(item);
     public bool Contains(T item) => members.Contains(item);
     public T GetItemAtIndex(int index) => members[index];
 
