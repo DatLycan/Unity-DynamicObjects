@@ -7,7 +7,7 @@ namespace DynamicObjects {
     [CustomEditor(typeof(Signal))]
     public class SignalEditor : Editor {
 
-        private bool _showListeners = false;
+        private bool showListeners = false;
 
         public override void OnInspectorGUI() {
             serializedObject.Update();
@@ -18,8 +18,8 @@ namespace DynamicObjects {
             if (Application.isPlaying) {
                 if (GUILayout.Button("Emit Signal")) signal.Emit();
 
-                _showListeners = EditorGUILayout.Foldout(_showListeners, "Connected Listeners: " + signal.GetConnectedListeners().Count);
-                if (_showListeners) {
+                showListeners = EditorGUILayout.Foldout(showListeners, "Connected Listeners: " + signal.GetConnectedListeners().Count);
+                if (showListeners) {
                     EditorGUILayout.Space();
                     foreach (Component parent in GetSignalListenerParents(signal)) {
                         EditorGUILayout.ObjectField(parent, typeof(Component), true);
