@@ -86,7 +86,7 @@ Simply download the [latest release](https://github.com/DatLycan/DynamicObjects/
 
 <br>
 
-## 🎥 Demo <a name = "acknowledgement"></a>
+## 🎥 Demo <a name = "demo"></a>
 
 An example can be found in the [Example](https://github.com/DatLycan/DynamicObjects/tree/main/Example) folder.
 
