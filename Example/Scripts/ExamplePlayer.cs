@@ -5,6 +5,7 @@ public class ExamplePlayer : MonoBehaviour {
 
     [SerializeField] private DynamicReference<float> playerHealth;
     [SerializeField] private DynamicReference<string> playerName;
+    [SerializeField] private DynamicReference<Quaternion> playerColor;
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Space)) {

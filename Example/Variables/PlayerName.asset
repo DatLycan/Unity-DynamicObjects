@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _emitSignal: 0
   _signal: {fileID: 0}
-  _initialValue: 
-  _value: 
+  _initialValue: Suu
+  _value: Suu
