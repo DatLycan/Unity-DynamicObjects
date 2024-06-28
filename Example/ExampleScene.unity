@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 110724584}
   - component: {fileID: 110724583}
   - component: {fileID: 110724585}
+  - component: {fileID: 110724586}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -153,13 +154,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth:
-    _useLocalValue: 0
+    dynamicVariable: {fileID: 11400000, guid: 0a1245230dbbb3949bc44f2c30783e7e, type: 2}
+    useLocalValue: 0
     _localValue: 0
-    _dynamicVariable: {fileID: 11400000, guid: 0a1245230dbbb3949bc44f2c30783e7e, type: 2}
   playerName:
-    _useLocalValue: 0
+    dynamicVariable: {fileID: 11400000, guid: 041c4fbc0e36dd14e8c8a480f85079d1, type: 2}
+    useLocalValue: 0
     _localValue: 
-    _dynamicVariable: {fileID: 11400000, guid: 041c4fbc0e36dd14e8c8a480f85079d1, type: 2}
 --- !u!4 &110724584
 Transform:
   m_ObjectHideFlags: 0
@@ -187,58 +188,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9a806005957b5648a98422828258770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signal: {fileID: 0}
+  signal: {fileID: 11400000, guid: 9dcd1247bd13fd94787422d35ec7ebe6, type: 2}
   response:
     m_PersistentCalls:
-      m_Calls: []
---- !u!1 &311739992
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 311739994}
-  - component: {fileID: 311739993}
-  m_Layer: 0
-  m_Name: Dork
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &311739993
+      m_Calls:
+      - m_Target: {fileID: 110724583}
+        m_TargetAssemblyTypeName: ExamplePlayer, Assembly-CSharp
+        m_MethodName: OnPlayerHealthChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &110724586
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 311739992}
+  m_GameObject: {fileID: 110724582}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9a806005957b5648a98422828258770, type: 3}
+  m_Script: {fileID: 11500000, guid: 6590a85b629d24c4e91c7e5dbc0ec475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signal: {fileID: 0}
-  response:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!4 &311739994
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 311739992}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  runtimeSet: {fileID: 11400000, guid: c32dafe37a69f7b4e9f511def08f45f8, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,4 +315,3 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 110724584}
-  - {fileID: 311739994}
