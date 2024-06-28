@@ -4,7 +4,7 @@ using UnityEngine;
 namespace DynamicObjects {
 
     [CustomEditor(typeof(DynamicSignalListener))]
-    public class SignalListenerEditor : Editor {
+    public class DynamicSignalListenerEditor : Editor {
 
         private SerializedProperty signal;
         private SerializedProperty response;

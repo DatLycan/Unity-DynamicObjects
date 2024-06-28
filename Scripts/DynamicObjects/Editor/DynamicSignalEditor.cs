@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace DynamicObjects {
 
     [CustomEditor(typeof(Signal))]
-    public class SignalEditor : Editor {
+    public class DynamicSignalEditor : Editor {
 
         private bool showListeners = false;
 
@@ -21,26 +21,14 @@ namespace DynamicObjects {
                 showListeners = EditorGUILayout.Foldout(showListeners, "Connected Listeners: " + signal.GetConnectedListeners().Count);
                 if (showListeners) {
                     EditorGUILayout.Space();
-                    foreach (Component parent in GetSignalListenerParents(signal)) {
-                        EditorGUILayout.ObjectField(parent, typeof(Component), true);
+                    foreach (DynamicSignalListener listener in signal.GetConnectedListeners()) {
+                        EditorGUILayout.ObjectField(listener.gameObject, typeof(Component), true);
                     }
                 }
             }
 
             serializedObject.ApplyModifiedProperties();
         }
-
-        private List<Component> GetSignalListenerParents(Signal signal) {
-            List<Component> parents = new();
-            foreach (DynamicSignalListener listener in signal.GetConnectedListeners()) {
-                Component parent = listener.gameObject.GetComponentInParent<Component>();
-                if (parent != null && !parents.Contains(parent)) {
-                    parents.Add(parent);
-                }
-            }
-            return parents;
-        }
-
     }
 
 }
