@@ -1,4 +1,5 @@
 using UnityEditor;
+using UnityEngine;
 
 namespace DynamicObjects {
 
@@ -20,6 +21,13 @@ namespace DynamicObjects {
 
             EditorGUILayout.PropertyField(signal);
             EditorGUILayout.PropertyField(response);
+
+            if (Application.isPlaying) {
+                EditorGUILayout.Space();
+                if (GUILayout.Button("Invoke response")) {
+                    signalListener.OnSignalEmitted(null, null);
+                }
+            }
 
             serializedObject.ApplyModifiedProperties();
         }

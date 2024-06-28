@@ -16,25 +16,24 @@ namespace DynamicObjects {
             DrawPropertiesExcluding(serializedObject, _scriptName);
 
             if (Application.isPlaying) {
-
                 DynamicGameObjectRuntimeSet runtimeSet = dynamicRuntimeSetMember.Get();
-
                 EditorGUILayout.Space();
-                if (GUILayout.Button("Remove from RuntimeSet")) {
+                EditorGUILayout.BeginHorizontal();
+
+                if (GUILayout.Button("Add to Runtime Set")) {
+                    if (!runtimeSet.Contains(dynamicRuntimeSetMember.gameObject)) {
+                        runtimeSet.Add(dynamicRuntimeSetMember.gameObject);
+                        Debug.Log($"Added [{dynamicRuntimeSetMember.gameObject.name}] to [{runtimeSet.name}]");
+                    }
+                }
+                if (GUILayout.Button("Remove from Runtime Set")) {
                     if (runtimeSet.Contains(dynamicRuntimeSetMember.gameObject)) {
                         runtimeSet.Remove(dynamicRuntimeSetMember.gameObject);
                         Debug.Log($"Removed [{dynamicRuntimeSetMember.gameObject.name}] from [{runtimeSet.name}]");
                     }
                 }
 
-                EditorGUILayout.Space();
-                if (GUILayout.Button("Add to RuntimeSet")) {
-                    if (!runtimeSet.Contains(dynamicRuntimeSetMember.gameObject)) {
-                        runtimeSet.Add(dynamicRuntimeSetMember.gameObject);
-                        Debug.Log($"Added [{dynamicRuntimeSetMember.gameObject.name}] to [{runtimeSet.name}]");
-                    }
-                }
-
+                EditorGUILayout.EndHorizontal();
             }
 
             serializedObject.ApplyModifiedProperties();
