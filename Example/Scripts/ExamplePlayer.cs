@@ -12,7 +12,7 @@ public class ExamplePlayer : MonoBehaviour {
         }
     }
 
-    public void SignalReceived() {
+    public void OnPlayerHealthChanged() {
         Debug.Log($"Signal received! {(string)playerName}'s current health:   {(float)playerHealth}");
     }
 }
