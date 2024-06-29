@@ -76,8 +76,8 @@ Simply download the [latest release](https://github.com/DatLycan/DynamicObjects/
 1. In your script **create a serialized DynamicReference**.<br>
    
    ```C#
-    [SerializedField] private DynamicFloatReference;
-    [SerializedField] private DynamicBoolReference;
+    [SerializedField] private DynamicReference<float> floatReference;
+    [SerializedField] private DynamicReference<bool> boolReference;
     // [. . .]
    ```
 2. In the Inspector **select a DynamicVariable**.
